@@ -11,12 +11,13 @@
 |
 */
 
-//Esto se ha comentado para mostrar el panel administrador
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-//la raiz lo cambiamos por admin
-Route::get('/', function(){
+
+Route::get('admin', function(){
     return view('admin.dashboard');
 });
+
+Route::auth();
