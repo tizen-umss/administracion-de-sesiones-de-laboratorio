@@ -29,7 +29,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Debug Mode
+    | Application Debug Mode 
     |--------------------------------------------------------------------------
     |
     | When your application is in debug mode, detailed error messages with
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
