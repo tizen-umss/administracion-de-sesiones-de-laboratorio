@@ -27,7 +27,7 @@ Route::group([
     'namespace'=>'Admin',
     'middleware'=> 'auth'],
     function(){
-        Route::get('/', 'AdminController@index');
+        Route::get('/', 'AdminController@index')->name('dashboard');
         Route::get('materias','MateriasController@index')->name('admin.materias.index');
         
         //rutas de administracion
