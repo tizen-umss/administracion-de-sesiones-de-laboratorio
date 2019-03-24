@@ -23,6 +23,7 @@
                   <th>Codigo Materia</th>
                   <th>Nombre Materia</th>
                   <th>Descripcion Materia</th>
+                  <th>Acciones </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,10 @@
                             <td> {{$materia->codMat}}</td>
                             <td> {{$materia->nombreMat}}</td>
                             <td> {{$materia->descMat}}</td>
+                            <td>
+                                <a href="#" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
