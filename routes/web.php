@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('materias',function(){
+    return App\Materia::all();
+});
+
 
 Route::get('home', function(){
     return view('admin.dashboard');
