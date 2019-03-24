@@ -19,6 +19,10 @@ class MateriasController extends Controller
 
     public function store(Request $request){
         //validacion
+        $this->validate($request,[
+            'codMat' => 'required',
+            'nombreMat' => 'required'
+        ]);
         // return Materia::create($request->all());
 
         $materia = new Materia;

@@ -24,14 +24,17 @@
         <form method="POST" action="{{route('admin.materias.store')}}">
         {{csrf_field()}}
             <div class="box-body">
-                <div class="form-group">
+                <div class="form-group {{$errors->has('codMat') ? 'has-error':''}}">
                     <label>Codigo de materia</label>
-                    <input name="codMat" class="form-control" placeholder="Ingresa aqui el codigo de la materia">
+                    <input name="codMat" class="form-control" value="{{old('codMat')}}" placeholder="Ingresa aqui el codigo de la materia">
+                    {!!$errors->first('codMat','<span class="help-block">:message</span>')!!}
+                    
                 </div>
 
-                <div class="form-group">
+                <div class="form-group {{$errors->has('nombreMat') ? 'has-error':''}}">
                     <label>Nombre de la materia</label>
-                    <input name="nombreMat" class="form-control" placeholder="Ingresa aqui el codigo de la materia">
+                    <input name="nombreMat" class="form-control" value="{{old('nombreMat')}} placeholder="Ingresa aqui el codigo de la materia">
+                    {!!$errors->first('nombreMat','<span class="help-block">:message</span>')!!}
                 </div>
 
                 <div class="form-group">
