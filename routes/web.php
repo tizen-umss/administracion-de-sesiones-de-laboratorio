@@ -29,6 +29,8 @@ Route::group([
     function(){
         Route::get('/', 'AdminController@index')->name('dashboard');
         Route::get('materias','MateriasController@index')->name('admin.materias.index');
+        Route::get('materias/create','MateriasController@create')->name('admin.materias.create');
+        Route::post('materias','MateriasController@store')->name('admin.materias.store');
         
         //rutas de administracion
     });
