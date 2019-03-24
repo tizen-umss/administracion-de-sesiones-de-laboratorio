@@ -20,16 +20,16 @@ Route::get('materias',function(){
 });
 
 
-Route::get('home', function(){
-    return view('admin.dashboard');
-})->middleware('auth');
+
 
 Route::group([
     'prefix'=>'admin',
     'namespace'=>'Admin',
     'middleware'=> 'auth'],
     function(){
+        Route::get('/', 'AdminController@index');
         Route::get('materias','MateriasController@index')->name('admin.materias.index');
+        
         //rutas de administracion
     });
 
