@@ -20,6 +20,16 @@ Route::get('home', function(){
     return view('admin.dashboard');
 })->middleware('auth');
 
+Route::group([
+    'prefix'=>'admin',
+    'namespace'=>'Admin',
+    'middleware'=> 'auth'],
+    function(){
+        Route::get('materias','MateriasController@index')->name('admin.materias.index');
+        //rutas de administracion
+    });
+
+ 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
