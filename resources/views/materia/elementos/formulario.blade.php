@@ -15,5 +15,5 @@
 
 <div class="form-group">
     <a href="{{ route('materia.index')}}" class="btn btn-default pull-rihght">Listado</a>
-    {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Enviar', ['class' => 'btn btn-primary pull-right']) !!}
 </div>

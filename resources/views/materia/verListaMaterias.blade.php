@@ -1,8 +1,7 @@
-@extends('plantillas.plantilla')
+@extends('admin/layout')
 
-@section('titulo', 'Materias')
 
-@section('contenido')
+@section('content')
     <p>
         <h2>
             Materias
@@ -51,6 +50,5 @@
             {!! $materias->render()!!}
     </div>
     <div class="col-sm-4">
-        
     </div>
-@endsection
+@stop

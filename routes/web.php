@@ -22,3 +22,7 @@ Route::get('/', function(){
 });
 
 route::Resource('/materia', 'controladorMateria');
+
+Route::get('/ejemplo', function(){
+    return view('ejemplo');
+});

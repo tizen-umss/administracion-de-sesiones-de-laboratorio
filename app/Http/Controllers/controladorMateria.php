@@ -16,6 +16,7 @@ class controladorMateria extends Controller
     {
         $materias = materia::orderBy('id')->paginate();
         return view('materia.verListaMaterias', compact('materias'));
+        //return view('ejemplo', compact('materias'));
     }
 
     /**
@@ -43,7 +44,8 @@ class controladorMateria extends Controller
         $tablaMateria->save();
         //return view('materia.verListaMaterias', compact('materias'));
         //return view('materia.verInforme');
-        return back()->with('info', 'La materia se agregó satisfactoriamente');
+        //return back()->with('info', 'La materia se agregó satisfactoriamente');
+        return redirect()->route('materia.index')->with('info', 'La materia se agregó satisfactoriamente');
     }
 
     /**

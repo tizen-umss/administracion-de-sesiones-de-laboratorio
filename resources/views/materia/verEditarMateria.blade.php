@@ -1,7 +1,6 @@
-@extends('plantillas.plantilla') 
+@extends('admin.layout') 
 
-@section('titulo', 'Edita')
-@section('contenido')
+@section('content')
     <div class=col-sm-8>
         <h2>
             Editar materia
@@ -14,4 +13,3 @@
        <!--Aquí van las colecciones o funcionalidades (componentes que se ejecutan con laravel colective)-->
     </div>
 @endsection
-
