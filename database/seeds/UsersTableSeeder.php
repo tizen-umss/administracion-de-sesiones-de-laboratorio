@@ -2,6 +2,7 @@
 
 use App\User;  //importamos tabla user
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,28 +13,40 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        User::truncate(); //vaciar la tabla de usuarios
+        //limpiamos la tabla rol
+        // Role::truncate();
+
+        // User::truncate(); //vaciar la tabla de usuarios
+
+        //creamos el rol admin
+        $adminRole = Role::create(['name' => 'Admin']);
+        $docenteRole = Role::create(['name' => 'Docente']);
+
+        $admin = new User;
+        $admin->name = 'maria';
+        $admin->apPat = 'huayllucu';
+        $admin->apMat = 'escobar';
+        $admin->ci = '7095167';
+        $admin->sis = '201502152';
+        $admin->email = 'maria@gmail.com';
+        $admin->password = bcrypt('holamundo');
+        $admin->save();
+        //le asignamos el rol
+        $admin->assignRole($adminRole);
 
         //creamos un usuario
-        $user = new User;
-        $user->name = 'julian';
-        $user->apPat = 'huarachi';
-        $user->apMat = 'mamani';
-        $user->ci = '7095167';
-        $user->sis = '201100964';
-        $user->email = 'jkazuo55@gmail.com';
-        $user->password = bcrypt('holamundo');
-        $user->save();
+        $docente = new User;
+        $docente->name = 'julian';
+        $docente->apPat = 'huarachi';
+        $docente->apMat = 'mamani';
+        $docente->ci = '7095167';
+        $docente->sis = '201100964';
+        $docente->email = 'jkazuo55@gmail.com';
+        $docente->password = bcrypt('holamundo');
+        $docente->save();
 
-        $user = new User;
-        $user->name = 'maria';
-        $user->apPat = 'huayllucu';
-        $user->apMat = 'escobar';
-        $user->ci = '7095167';
-        $user->sis = '201502152';
-        $user->email = 'maria@gmail.com';
-        $user->password = bcrypt('holamundo');
-        $user->save();
+        $docente->assignRole($docenteRole);
+
+        
     }
 }

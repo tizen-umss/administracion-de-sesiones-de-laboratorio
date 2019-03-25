@@ -10,6 +10,11 @@ class MateriasController extends Controller
 {
     public function index(){
         $materias = Materia::all();
+        // if( auth()->user()->hasRole('Admin')){
+        //     $materias = Materias::all();
+        // }else{
+        //     $materias = auth()->user()->materias;
+        // }
         return view('admin.materias.index',compact('materias'));
     }
 
