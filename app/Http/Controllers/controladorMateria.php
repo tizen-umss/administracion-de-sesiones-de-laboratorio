@@ -65,7 +65,7 @@ class controladorMateria extends Controller
      */
     public function edit($id)
     {   $materia = materia::find($id);
-        return view('materia.verEditarMateria', compact('materia'), compact('id'));
+        return view('materia.verEditarMateria', compact('materia'));
     }
 
     /**
@@ -82,7 +82,8 @@ class controladorMateria extends Controller
         $materia->codMat = $request->input('codMat');
         $materia->desMat = $request->input('desMat');
         $materia->save();
-        return 'se guardo';
+        return redirect()->route('materia.index')
+                ->with('info', 'La materia se actualizó satisfactoriamente');
     }
 
     /**
